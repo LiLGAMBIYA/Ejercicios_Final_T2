@@ -6,7 +6,7 @@ $productos = [
 ];
 
 $caros = array_filter($productos, fn($p) => $p["precio"] > 400);
-echo "--- Productos caros (> 400) ---<br>";
+echo " Productos caros (> 400) ";
 print_r($caros);
 
 usort($productos, fn($a, $b) => $a["precio"] <=> $b["precio"]);
@@ -17,6 +17,6 @@ $valorTotal = array_reduce($productos, fn($total, $p) =>
     $total + ($p["precio"] * $p["stock"]),
     0);
 
-echo "<br><br>--- Valor total del inventario ---<br>";
+echo " Valor total del inventario ";
 echo "$" . number_format($valorTotal, 2);
 ?>
